@@ -1,0 +1,16 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+data/*.csv
+!data/sample_*.csv
+data/.gitkeep
+*.log
+*.json
+*.joblib
+*.tsv
+*.png
+!backtest_result/*.png
+catboost_info/
+upcoming_fights/
+model/
