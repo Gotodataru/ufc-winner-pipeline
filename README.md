@@ -38,12 +38,6 @@ text
 
 ## ⚙️ Технологический стек
 
-- **Язык:** Python 3.10+
-- **ML & Data:** pandas, numpy, catboost, scikit-learn
-- **Визуализация:** matplotlib, seaborn
-- **Инструменты:** joblib, python-dotenv, pathlib
-## ⚙️ Технологический стек
-
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
 ![pandas](https://img.shields.io/badge/pandas-2.0%2B-150458?logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-1.24%2B-013243?logo=numpy&logoColor=white)
