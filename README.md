@@ -1,4 +1,4 @@
-![График](backtest_result/performance_report_20260420_131749.png)
+
 
 # 🥊 UFC Winner Prediction & Value Betting Pipeline
 
@@ -98,3 +98,6 @@ Brier Score	0.2331	✅ Низкая ошибка
 📜 Лицензия
 MIT License. Код предоставляется «как есть» для образовательных целей.
 Архитектура открыта, однако конкретные веса модели и полные датасеты могут быть защищены авторским правом их владельцев.
+
+
+![График](backtest_result/performance_report_20260420_131749.png)
