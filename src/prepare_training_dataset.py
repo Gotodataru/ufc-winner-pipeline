@@ -1,4 +1,5 @@
-# D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\prepare_training_dataset.py
+from config import DATA_DIR, MODEL_DIR, BASE_DIR
+# str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\prepare_training_dataset.py
 import pandas as pd
 import numpy as np
 import json
@@ -18,14 +19,14 @@ def prepare_training_dataset():
     
     # Добавляем все разностные признаки за 5 боев
     diff_features_5 = [col for col in pd.read_csv(
-        r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden.csv', 
+        r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden.csv', 
         nrows=0
     ).columns if col.startswith('diff_') and col.endswith('_5')]
     
     cols_to_load.extend(diff_features_5)
     
     df = pd.read_csv(
-        r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden.csv',
+        r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden.csv',
         usecols=cols_to_load,
         parse_dates=['event_date'],
         low_memory=False
@@ -111,8 +112,8 @@ def prepare_training_dataset():
     }
     
     # Сохраняем датасет и метаданные
-    output_path = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\training_dataset.csv'
-    metadata_path = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\feature_metadata.json'
+    output_path = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\training_dataset.csv'
+    metadata_path = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\feature_metadata.json'
     
     df.to_csv(output_path, index=False)
     with open(metadata_path, 'w', encoding='utf-8') as f:

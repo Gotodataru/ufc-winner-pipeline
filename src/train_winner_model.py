@@ -8,6 +8,7 @@
 - Сохранение модели и параметров калибровки
 """
 
+# Импорты библиотек
 import pandas as pd
 import numpy as np
 from catboost import CatBoostClassifier, Pool
@@ -19,14 +20,25 @@ from datetime import datetime
 import os
 import joblib
 import warnings
+import sys
+from pathlib import Path
+
+# Добавляем корень проекта в путь, чтобы работало и при запуске как скрипта, и как модуля
+ROOT_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT_DIR))
+
+# Импортируем конфиг
+from config import DATA_DIR, MODEL_DIR, BASE_DIR
+
 warnings.filterwarnings('ignore')
 
 # ==============================================================================
 # 1. КОНФИГУРАЦИЯ
 # ==============================================================================
+# Используем переменные из config.py для построения путей
 CONFIG = {
-    'data_path': r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv',
-    'output_dir': r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model',
+    'data_path': DATA_DIR / 'UFC_full_data_golden_fixed.csv',
+    'output_dir': MODEL_DIR,
     'min_date': '2016-01-01',
     'train_end': '2022-12-31',
     'val_end': '2023-12-31',
@@ -48,6 +60,7 @@ CONFIG = {
     }
 }
 
+# Создаем директорию для моделей, если нет
 os.makedirs(CONFIG['output_dir'], exist_ok=True)
 
 # ==============================================================================
@@ -74,6 +87,11 @@ TOP_40_FEATURES = [
 print("="*80)
 print("🚀 ЗАГРУЗКА ДАННЫХ С 2016 ГОДА ДЛЯ CATBOOST")
 print("="*80)
+
+# Проверка существования файла перед загрузкой
+if not CONFIG['data_path'].exists():
+    raise FileNotFoundError(f"Файл данных не найден по пути: {CONFIG['data_path']}\n"
+                            f"Убедитесь, что файл 'UFC_full_data_golden_fixed.csv' лежит в папке {DATA_DIR}")
 
 df = pd.read_csv(CONFIG['data_path'], low_memory=False)
 df['event_date'] = pd.to_datetime(df['event_date'], errors='coerce')
@@ -285,12 +303,12 @@ print(f"Тест (2024-2025): {test_profit['total_bets']} ставок | Win Rat
 # ==============================================================================
 print("\n[8/7] Сохранение модели и параметров калибровки...")
 
-model_path = os.path.join(CONFIG['output_dir'], 'winner_model_catboost_v1.cbm')
+model_path = CONFIG['output_dir'] / 'winner_model_catboost_v1.cbm'
 model.save_model(model_path, format='cbm')
 print(f"✅ Базовая модель сохранена: {model_path}")
 
 calib_params = {'a': calib_a, 'b': calib_b}
-calib_path = os.path.join(CONFIG['output_dir'], 'calibration_params.joblib')
+calib_path = CONFIG['output_dir'] / 'calibration_params.joblib'
 joblib.dump(calib_params, calib_path)
 print(f"✅ Параметры калибровки сохранены: {calib_path}")
 
@@ -349,7 +367,7 @@ report += """
    (b=0, поэтому можно не использовать)
 """
 
-report_path = os.path.join(CONFIG['output_dir'], 'catboost_report.txt')
+report_path = CONFIG['output_dir'] / 'catboost_report.txt'
 with open(report_path, 'w', encoding='utf-8') as f:
     f.write(report)
 print(f"✓ Отчет сохранен: {report_path}")

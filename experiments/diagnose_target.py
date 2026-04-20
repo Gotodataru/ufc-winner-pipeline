@@ -1,3 +1,4 @@
+from config import DATA_DIR, MODEL_DIR, BASE_DIR
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
@@ -7,7 +8,7 @@
 import pandas as pd
 import numpy as np
 
-DATA_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden.csv'
+DATA_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden.csv'
 
 print("="*80)
 print("🔍 ДИАГНОСТИКА ЦЕЛЕВОЙ ПЕРЕМЕННОЙ 'winner_encoded'")
@@ -46,7 +47,7 @@ print(yearly_dist.tail(10).to_string())
 
 # Сохраняем полный отчет
 df['winner_encoded'].value_counts(dropna=False).to_csv(
-    r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\winner_encoded_distribution.csv',
+    r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\winner_encoded_distribution.csv',
     header=True,
     index_label='value'
 )

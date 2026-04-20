@@ -1,3 +1,4 @@
+from config import DATA_DIR, MODEL_DIR, BASE_DIR
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
@@ -19,10 +20,10 @@ warnings.filterwarnings('ignore')
 # ==============================================================================
 # 1. ЗАГРУЗКА ДАННЫХ И МОДЕЛИ
 # ==============================================================================
-DATA_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv'
-MODEL_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model\winner_model_catboost_v1.cbm'
-CALIB_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model\calibration_params.joblib'
-OUTPUT_DIR = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model'
+DATA_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv'
+MODEL_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model\winner_model_catboost_v1.cbm'
+CALIB_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model\calibration_params.joblib'
+OUTPUT_DIR = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model'
 
 print("="*80)
 print("🔍 ОПТИМИЗАЦИЯ ПАРАМЕТРОВ СТРАТЕГИЙ НА ВАЛИДАЦИОННОМ ПЕРИОДЕ (до 2024)")

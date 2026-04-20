@@ -1,3 +1,4 @@
+from config import DATA_DIR, MODEL_DIR, BASE_DIR
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -20,10 +21,10 @@ warnings.filterwarnings('ignore')
 from value_bet_filters import FILTER_CONFIGS, ACTIVE_STRATEGY
 
 # ===================== НАСТРОЙКИ =====================
-DATA_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv'
-MODEL_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model\winner_model_catboost_v1.cbm'
-CALIB_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model\calibration_params.joblib'
-OUTPUT_DIR = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model'
+DATA_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv'
+MODEL_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model\winner_model_catboost_v1.cbm'
+CALIB_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model\calibration_params.joblib'
+OUTPUT_DIR = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model'
 
 # Период бэктеста (можно изменить)
 TEST_START_DATE = '2024-01-01'

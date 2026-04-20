@@ -1,3 +1,4 @@
+from config import DATA_DIR, MODEL_DIR, BASE_DIR
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
@@ -30,10 +31,10 @@ print("="*80)
 print("🔍 ВАЛИДАЦИЯ МОДЕЛИ CATBOOST (С КАЛИБРОВКОЙ И СИММЕТРИЗАЦИЕЙ)")
 print("="*80)
 
-DATA_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv'
-MODEL_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model\winner_model_catboost_v1.cbm'
-CALIB_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model\calibration_params.joblib'
-OUTPUT_DIR = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model'
+DATA_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv'
+MODEL_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model\winner_model_catboost_v1.cbm'
+CALIB_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model\calibration_params.joblib'
+OUTPUT_DIR = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model'
 
 # Загрузка данных (как в основном скрипте)
 df = pd.read_csv(DATA_PATH, low_memory=False)

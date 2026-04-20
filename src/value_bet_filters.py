@@ -1,3 +1,4 @@
+from config import DATA_DIR, MODEL_DIR, BASE_DIR
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """

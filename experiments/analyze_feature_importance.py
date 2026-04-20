@@ -1,3 +1,4 @@
+from config import DATA_DIR, MODEL_DIR, BASE_DIR
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
@@ -24,7 +25,7 @@ print("🚀 АНАЛИЗ ВАЖНОСТИ ПРИЗНАКОВ (ВЕРСИЯ 3.0) 
 print("="*80)
 
 # КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ: читаем ИСПРАВЛЕННЫЙ файл
-DATA_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv'
+DATA_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv'
 
 print("\n[1/6] Загрузка ИСПРАВЛЕННЫХ данных...")
 cols_all = pd.read_csv(DATA_PATH, nrows=0).columns.tolist()
@@ -131,7 +132,7 @@ corr_df = pd.DataFrame({
 }).sort_values('abs_correlation', ascending=False)
 
 corr_df.to_csv(
-    r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\feature_correlations_fixed.csv',
+    r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\feature_correlations_fixed.csv',
     index=False,
     encoding='utf-8-sig'
 )
@@ -214,7 +215,7 @@ importance_df = importance_df.merge(
 
 # Сохраняем полный анализ
 importance_df.to_csv(
-    r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\feature_importance_full_fixed.csv',
+    r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\feature_importance_full_fixed.csv',
     index=False,
     encoding='utf-8-sig'
 )
@@ -276,7 +277,7 @@ for group, pct in group_stats.items():
 
 # Сохраняем топ-50 признаков
 top_50_features = importance_df.head(50)['feature'].tolist()
-output_path = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\top_50_features_fixed.txt'
+output_path = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\top_50_features_fixed.txt'
 with open(output_path, 'w', encoding='utf-8') as f:
     f.write(f"ТОП-50 ПРИЗНАКОВ ДЛЯ МОДЕЛИ ПОБЕДИТЕЛЯ UFC (ИСПРАВЛЕННЫЙ ДАТАСЕТ)\n")
     f.write(f"Сгенерировано: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")

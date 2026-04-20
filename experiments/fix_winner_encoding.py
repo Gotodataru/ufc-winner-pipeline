@@ -1,3 +1,4 @@
+from config import DATA_DIR, MODEL_DIR, BASE_DIR
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
@@ -9,8 +10,8 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
-DATA_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden.csv'
-OUTPUT_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv'
+DATA_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden.csv'
+OUTPUT_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv'
 
 print("="*80)
 print("🔧 ИСПРАВЛЕНИЕ КОДИРОВКИ ПОБЕДИТЕЛЯ")
@@ -110,7 +111,7 @@ report = {
 }
 
 import json
-with open(r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\winner_encoding_fix_report.json', 'w', encoding='utf-8') as f:
+with open(r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\winner_encoding_fix_report.json', 'w', encoding='utf-8') as f:
     json.dump(report, f, indent=2, ensure_ascii=False)
 
 print(f"\n📄 Отчет сохранен: winner_encoding_fix_report.json")

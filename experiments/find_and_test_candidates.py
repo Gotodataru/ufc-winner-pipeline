@@ -1,3 +1,4 @@
+from config import DATA_DIR, MODEL_DIR, BASE_DIR
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -19,10 +20,10 @@ from datetime import datetime
 import glob
 
 # ===================== НАСТРОЙКИ =====================
-DATA_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv'
-MODEL_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model\winner_model_catboost_v1.cbm'
-CALIB_PATH = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model\calibration_params.joblib'
-OPTIMIZATION_DIR = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model'
+DATA_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv'
+MODEL_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model\winner_model_catboost_v1.cbm'
+CALIB_PATH = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model\calibration_params.joblib'
+OPTIMIZATION_DIR = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model'
 
 # Период тестирования (можно менять)
 TEST_START_DATE = '2024-01-01'

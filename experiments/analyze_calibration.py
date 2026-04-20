@@ -1,3 +1,4 @@
+from config import DATA_DIR, MODEL_DIR, BASE_DIR
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
@@ -29,7 +30,7 @@ print("="*80)
 
 # Загрузка данных
 df = pd.read_csv(
-    r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv',
+    r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\data\UFC_full_data_golden_fixed.csv',
     low_memory=False
 )
 df['event_date'] = pd.to_datetime(df['event_date'], errors='coerce')
@@ -50,7 +51,7 @@ if 'weight_class' in df.columns:
     df = pd.concat([df.drop('weight_class', axis=1), weight_dummies], axis=1)
 
 # Загрузка обученной модели
-model_path = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model\winner_model_catboost_v1.pkl'
+model_path = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model\winner_model_catboost_v1.pkl'
 model = joblib.load(model_path)
 
 # Подготовка данных для анализа (тестовый сет 2024-2025)
@@ -287,7 +288,7 @@ else:
 plt.suptitle("АНАЛИЗ КАЛИБРОВКИ МОДЕЛИ ПРЕДСКАЗАНИЯ ПОБЕДИТЕЛЯ UFC", 
              fontsize=19, fontweight='bold', y=0.998, color='#2c3e50')
 plt.tight_layout(rect=[0, 0.03, 1, 0.96])
-output_path = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model\calibration_analysis.png'
+output_path = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model\calibration_analysis.png'
 plt.savefig(output_path, dpi=180, bbox_inches='tight', facecolor='white')
 plt.close()
 
@@ -382,7 +383,7 @@ report += f"""
   • Избегайте боев с разницей возраста >25 лет и дебютантов
 """
 
-report_path = r'D:\BETTING\UFCTOPMODEL\WINNER\winnerbigdata\model\calibration_report.txt'
+report_path = r'str(BASE_DIR)\UFCTOPMODEL\WINNER\winnerbigdata\model\calibration_report.txt'
 with open(report_path, 'w', encoding='utf-8') as f:
     f.write(report)
 
