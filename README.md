@@ -40,7 +40,7 @@ text
 
 ![График](backtest_result/performance_report_20260420_131749.png)
 
-⚙️ Технологический стек (с красивыми значками)
+
 ## ⚙️ Технологический стек
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
