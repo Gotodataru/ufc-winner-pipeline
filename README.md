@@ -1,3 +1,5 @@
+![График результатов](backtest_result/equity_curve.png)
+
 # 🥊 UFC Winner Prediction & Value Betting Pipeline
 
 📌 **Статус:** Демонстрационный прототип для портфолио.  
@@ -40,6 +42,18 @@ text
 - **ML & Data:** pandas, numpy, catboost, scikit-learn
 - **Визуализация:** matplotlib, seaborn
 - **Инструменты:** joblib, python-dotenv, pathlib
+## ⚙️ Технологический стек
+
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-2.0%2B-150458?logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-1.24%2B-013243?logo=numpy&logoColor=white)
+![CatBoost](https://img.shields.io/badge/CatBoost-1.2%2B-FFCC00?logo=catboost&logoColor=black)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3%2B-F7931E?logo=scikitlearn&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.7%2B-11557c?logo=matplotlib&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-0.12%2B-4C72B0?logo=seaborn&logoColor=white)
+![Joblib](https://img.shields.io/badge/Joblib-1.3%2B-4682B4?logo=python&logoColor=white)
+![python-dotenv](https://img.shields.io/badge/python--dotenv-1.0%2B-5C5C5C?logo=python&logoColor=white)
+
 
 ## 🚀 Как запустить
 
