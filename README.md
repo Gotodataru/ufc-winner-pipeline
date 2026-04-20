@@ -1,4 +1,4 @@
-![График результатов](backtest_result/equity_curve.png)
+![График](backtest_result/performance_report_20260420_131749.png)
 
 # 🥊 UFC Winner Prediction & Value Betting Pipeline
 
@@ -36,26 +36,30 @@
 
 text
 
-## ⚙️ Технологический стек
+## 📈 График результатов
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
-![pandas](https://img.shields.io/badge/pandas-2.0%2B-150458?logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-1.24%2B-013243?logo=numpy&logoColor=white)
-![CatBoost](https://img.shields.io/badge/CatBoost-1.2%2B-FFCC00?logo=catboost&logoColor=black)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3%2B-F7931E?logo=scikitlearn&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-3.7%2B-11557c?logo=matplotlib&logoColor=white)
-![Seaborn](https://img.shields.io/badge/Seaborn-0.12%2B-4C72B0?logo=seaborn&logoColor=white)
-![Joblib](https://img.shields.io/badge/Joblib-1.3%2B-4682B4?logo=python&logoColor=white)
-![python-dotenv](https://img.shields.io/badge/python--dotenv-1.0%2B-5C5C5C?logo=python&logoColor=white)
+Если у тебя в папке `backtest_result/` есть файл, например `equity_curve.png`, вставь его так:
 
+```markdown
+![Кривая доходности](backtest_result/equity_curve.png)
+Если картинка не появляется — убедись, что файл загружен в репозиторий (проверь через git add и git push), и что имя файла написано точно (регистр важен). Можно также использовать полный путь от корня.
 
-## 🚀 Как запустить
+⚙️ Технологический стек (с красивыми значками)
+https://img.shields.io/badge/Python-3.10%252B-blue?logo=python&logoColor=white
+https://img.shields.io/badge/pandas-2.0%252B-150458?logo=pandas&logoColor=white
+https://img.shields.io/badge/NumPy-1.24%252B-013243?logo=numpy&logoColor=white
+https://img.shields.io/badge/CatBoost-1.2%252B-FFCC00?logo=catboost&logoColor=black
+https://img.shields.io/badge/scikit--learn-1.3%252B-F7931E?logo=scikitlearn&logoColor=white
+https://img.shields.io/badge/Matplotlib-3.7%252B-11557c?logo=matplotlib&logoColor=white
+https://img.shields.io/badge/Seaborn-0.12%252B-4C72B0?logo=seaborn&logoColor=white
+https://img.shields.io/badge/Joblib-1.3%252B-4682B4?logo=python&logoColor=white
+https://img.shields.io/badge/python--dotenv-1.0%252B-5C5C5C?logo=python&logoColor=white
 
+🚀 Как запустить
 Так как данные и модель не загружены в репозиторий, выполните следующие шаги:
 
-### 1. Установка зависимостей
-
-```bash
+1. Установка зависимостей
+bash
 pip install -r requirements.txt
 2. Подготовка данных
 Положите ваш файл датасета (например, UFC_full_data_golden_fixed.csv) в папку data/.
